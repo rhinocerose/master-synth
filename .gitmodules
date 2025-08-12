@@ -18,3 +18,11 @@
 	path = synth-mutable
 	url = git@git-rhino:rhinocerose/synth-mutable
 	branch = main
+[submodule "eurorack-rebeltech"]
+	path = eurorack-rebeltech
+	url = git@git-rhino:rhinocerose/eurorack-rebeltech
+	branch = main
+[submodule "eurorack-westlicht"]
+	path = eurorack-westlicht
+	url = git@git-rhino:rhinocerose/eurorack-westlicht
+	branch = main
