@@ -26,3 +26,11 @@
 	path = eurorack-westlicht
 	url = git@git-rhino:rhinocerose/eurorack-westlicht
 	branch = main
+[submodule "synth-monome"]
+	path = synth-monome
+	url = git@git-rhino:rhinocerose/synth-monome
+	branch = main
+[submodule "eurorack-afterlater-Eurorack"]
+	path = eurorack-afterlater-Eurorack
+	url = git@git-rhino:rhinocerose/eurorack-afterlater-Eurorack
+	branch = main
