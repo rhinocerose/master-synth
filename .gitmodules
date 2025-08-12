@@ -1,0 +1,20 @@
+[submodule "eurorack-minisystem"]
+	path = eurorack-minisystem
+	url = git@git-rhino:rhinocerose/eurorack-minisystem
+	branch = main
+[submodule "eurorack-winterbloom"]
+	path = eurorack-winterbloom
+	url = git@git-rhino:rhinocerose/eurorack-winterbloom
+	branch = main
+[submodule "eurorack-4ms"]
+	path = eurorack-4ms
+	url = git@git-rhino:rhinocerose/eurorack-4ms
+	branch = main
+[submodule "eurorack-jakplugg"]
+	path = eurorack-jakplugg
+	url = git@git-rhino:rhinocerose/eurorack-jakplugg
+	branch = main
+[submodule "synth-mutable"]
+	path = synth-mutable
+	url = git@git-rhino:rhinocerose/synth-mutable
+	branch = main
