@@ -34,3 +34,11 @@
 	path = eurorack-afterlater-Eurorack
 	url = git@git-rhino:rhinocerose/eurorack-afterlater-Eurorack
 	branch = main
+[submodule "eurorack-befaco"]
+	path = eurorack-befaco
+	url = git@git-rhino:rhinocerose/eurorack-befaco
+	branch = main
+[submodule "eurorack-antumbra"]
+	path = eurorack-antumbra
+	url = git@git-rhino:rhinocerose/eurorack-antumbra
+	branch = main
