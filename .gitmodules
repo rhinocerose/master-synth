@@ -46,3 +46,7 @@
 	path = eurorack-musicthing
 	url = git@git-rhino:rhinocerose/eurorack-musicthing
 	branch = main
+[submodule "synth-midibox"]
+	path = synth-midibox
+	url = git@git-rhino:rhinocerose/synth-midibox
+	branch = main
