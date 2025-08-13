@@ -1,0 +1,44 @@
+[submodule "eurorack-minisystem"]
+	path = eurorack-minisystem
+	url = git@git-rhino:rhinocerose/eurorack-minisystem
+	branch = main
+[submodule "eurorack-winterbloom"]
+	path = eurorack-winterbloom
+	url = git@git-rhino:rhinocerose/eurorack-winterbloom
+	branch = main
+[submodule "eurorack-4ms"]
+	path = eurorack-4ms
+	url = git@git-rhino:rhinocerose/eurorack-4ms
+	branch = main
+[submodule "eurorack-jakplugg"]
+	path = eurorack-jakplugg
+	url = git@git-rhino:rhinocerose/eurorack-jakplugg
+	branch = main
+[submodule "synth-mutable"]
+	path = synth-mutable
+	url = git@git-rhino:rhinocerose/synth-mutable
+	branch = main
+[submodule "eurorack-rebeltech"]
+	path = eurorack-rebeltech
+	url = git@git-rhino:rhinocerose/eurorack-rebeltech
+	branch = main
+[submodule "eurorack-westlicht"]
+	path = eurorack-westlicht
+	url = git@git-rhino:rhinocerose/eurorack-westlicht
+	branch = main
+[submodule "synth-monome"]
+	path = synth-monome
+	url = git@git-rhino:rhinocerose/synth-monome
+	branch = main
+[submodule "eurorack-afterlater-Eurorack"]
+	path = eurorack-afterlater-Eurorack
+	url = git@git-rhino:rhinocerose/eurorack-afterlater-Eurorack
+	branch = main
+[submodule "eurorack-befaco"]
+	path = eurorack-befaco
+	url = git@git-rhino:rhinocerose/eurorack-befaco
+	branch = main
+[submodule "eurorack-antumbra"]
+	path = eurorack-antumbra
+	url = git@git-rhino:rhinocerose/eurorack-antumbra
+	branch = main
