@@ -42,3 +42,7 @@
 	path = eurorack-antumbra
 	url = git@git-rhino:rhinocerose/eurorack-antumbra
 	branch = main
+[submodule "eurorack-musicthing"]
+	path = eurorack-musicthing
+	url = git@git-rhino:rhinocerose/eurorack-musicthing
+	branch = main
