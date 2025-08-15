@@ -50,3 +50,11 @@
 	path = synth-midibox
 	url = git@git-rhino:rhinocerose/synth-midibox
 	branch = main
+[submodule "synth-schematics"]
+	path = synth-schematics
+	url = git@git-rhino:rhinocerose/synth-schematics
+	branch = main
+[submodule "eurorack-hexinverter"]
+	path = eurorack-hexinverter
+	url = git@git-rhino:rhinocerose/eurorack-hexinverter
+	branch = main
