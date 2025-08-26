@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to execute git workflow on all repos and submodules with error handling
+# Script to execute git workflow on all repos and submodules with full recursion
 # Usage: ./grecur.sh <directory>
 
 set -e  # Exit on any error
@@ -18,7 +18,7 @@ if [ ! -d "$TARGET_DIR" ]; then
     exit 1
 fi
 
-# Function to process a directory
+# Function to process a directory with full recursion
 process_repo() {
     local dir="$1"
     
@@ -43,17 +43,18 @@ process_repo() {
         
         echo ""
         
-        # Check for submodules
+        # Check for submodules and process them recursively
         if [ -f "$dir/.gitmodules" ]; then
-            echo "Found submodules in $dir"
+            echo "Found submodules in $dir, processing recursively..."
             
-            # Get submodule paths from .gitmodules file
-            local submodule_paths=$(grep -E "^\s*path\s*=" "$dir/.gitmodules" | sed 's/^.*= //' | tr -d ' ')
-            
-            for submodule_path in $submodule_paths; do
+            # Get submodule paths using git config (more reliable)
+            git -C "$dir" config --file .gitmodules --get-regexp path | awk '{print $2}' | while read -r submodule_path; do
                 local full_submodule_path="$dir/$submodule_path"
                 if [ -d "$full_submodule_path" ]; then
+                    echo "Processing submodule: $submodule_path"
                     process_repo "$full_submodule_path"
+                else
+                    echo "Warning: Submodule path '$full_submodule_path' does not exist"
                 fi
             done
         fi
