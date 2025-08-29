@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Most reliable version - uses find to get EVERY git repo at any depth
+# Use git submodule status to detect and skip unpopulated submodules
 # Usage: ./grecur.sh <directory>
 
 set -e
@@ -17,7 +17,7 @@ if [ ! -d "$TARGET_DIR" ]; then
     exit 1
 fi
 
-# Process a single repository
+# Function to process a repository
 process_repo() {
     local repo_dir="$1"
     
@@ -25,30 +25,68 @@ process_repo() {
     echo "Processing: $repo_dir"
     echo "========================================"
     
+    # Execute checkout and pull
     (cd "$repo_dir" && \
      echo "1. Checking out main branch..." && \
      git checkout main 2>/dev/null || git checkout master 2>/dev/null || echo "Staying on current branch" && \
      echo "2. Pulling latest changes..." && \
      git pull && \
      echo "3. Adding all changes..." && \
-     git add . && \
-     echo "4. Committing changes..." && \
-     git commit -m "Updating" || echo "No changes to commit" && \
-     echo "5. Pushing to origin..." && \
-     git push origin)
+     git add .)
+    
+    # Check if there are staged changes to commit
+    if (cd "$repo_dir" && git diff --cached --quiet); then
+        echo "4. No changes to commit"
+    else
+        echo "4. Committing changes..."
+        (cd "$repo_dir" && \
+         git commit -m "Updating" && \
+         echo "5. Pushing to origin..." && \
+         git push origin)
+    fi
     
     echo ""
 }
 
-# Main execution
-echo "Searching for ALL git repositories in: $TARGET_DIR"
+# Function to recursively process submodules using git submodule status
+process_submodules() {
+    local parent_dir="$1"
+    
+    if [ ! -f "$parent_dir/.gitmodules" ]; then
+        return
+    fi
+    
+    echo "Checking for submodules in: $parent_dir"
+    
+    # Use git submodule status to get populated submodules
+    (cd "$parent_dir" && git submodule status --recursive) | while read -r status_line; do
+        # Extract submodule path (second field)
+        submodule_path=$(echo "$status_line" | awk '{print $2}')
+        
+        if [ -n "$submodule_path" ] && [ "$submodule_path" != "." ]; then
+            full_path="$parent_dir/$submodule_path"
+            
+            # If the line starts with '-' it's unpopulated, skip it
+            if echo "$status_line" | grep -q "^-"; then
+                echo "Skipping unpopulated submodule: $submodule_path"
+            else
+                echo "Processing populated submodule: $submodule_path"
+                process_repo "$full_path"
+                
+                # Recursively process submodules of this submodule
+                process_submodules "$full_path"
+            fi
+        fi
+    done
+}
 
-# Use find with -print0 to handle spaces in paths
-while IFS= read -r -d '' git_dir; do
-    repo_dir=$(dirname "$git_dir")
-    process_repo "$repo_dir"
-done < <(find "$TARGET_DIR" -name ".git" -type d -print0)
+# Main execution
+echo "Processing main repository..."
+process_repo "$TARGET_DIR"
+
+# Process all populated submodules recursively
+process_submodules "$TARGET_DIR"
 
 echo "========================================"
-echo "ALL git repositories processed successfully!"
+echo "All populated repositories processed!"
 echo "========================================"

@@ -58,3 +58,11 @@
 	path = eurorack-hexinverter
 	url = git@git-rhino:rhinocerose/eurorack-hexinverter
 	branch = main
+[submodule "synth-plinky"]
+	path = synth-plinky
+	url = git@git-rhino:rhinocerose/synth-plinky
+	branch = main
+[submodule "eurorack-o_c-all"]
+	path = eurorack-o_c-all
+	url = git@git-rhino:rhinocerose/eurorack-o_c-all
+	branch = main
