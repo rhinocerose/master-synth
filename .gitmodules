@@ -74,3 +74,11 @@
 	path = eurorack-Miasma_1.03_Revised
 	url = git@git-rhino:rhinocerose/eurorack-Miasma_1.03_Revised
 	branch = main
+[submodule "synth-plinky"]
+	path = synth-plinky
+	url = git@git-rhino:rhinocerose/synth-plinky
+	branch = main
+[submodule "eurorack-grayscale"]
+	path = eurorack-grayscale
+	url = git@git-rhino:rhinocerose/eurorack-grayscale
+	branch = main
