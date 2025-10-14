@@ -82,3 +82,7 @@
 	path = eurorack-grayscale
 	url = git@git-rhino:rhinocerose/eurorack-grayscale
 	branch = main
+[submodule "synth-drums"]
+	path = synth-drums
+	url = git@git-rhino:rhinocerose/synth-drums
+	branch = main
