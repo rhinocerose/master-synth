@@ -62,10 +62,6 @@
 	path = eurorack-o_c-all
 	url = git@git-rhino:rhinocerose/eurorack-o_c-all
 	branch = main
-[submodule "eurorack-tinrs-Eurorack-Modules"]
-	path = eurorack-tinrs-Eurorack-Modules
-	url = git@git-rhino:rhinocerose/eurorack-tinrs-Eurorack-Modules
-	branch = main
 [submodule "eurorack-erica"]
 	path = eurorack-erica
 	url = git@git-rhino:rhinocerose/eurorack-erica
@@ -89,3 +85,6 @@
 [submodule "eurorack-northcoast"]
 	path = eurorack-northcoast
 	url = git@git-rhino:rhinocerose/eurorack-northcoast
+[submodule "eurorack-tinrs-Eurorack-Modules"]
+	path = eurorack-tinrs-Eurorack-Modules
+	url = git@git-rhino:rhinocerose/eurorack-tinrs-Eurorack-Modules
