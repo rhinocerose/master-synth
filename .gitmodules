@@ -86,3 +86,6 @@
 	path = synth-drums
 	url = git@git-rhino:rhinocerose/synth-drums
 	branch = main
+[submodule "eurorack-northcoast"]
+	path = eurorack-northcoast
+	url = git@git-rhino:rhinocerose/eurorack-northcoast
