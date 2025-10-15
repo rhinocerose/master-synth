@@ -88,3 +88,6 @@
 [submodule "eurorack-tinrs-Eurorack-Modules"]
 	path = eurorack-tinrs-Eurorack-Modules
 	url = git@git-rhino:rhinocerose/eurorack-tinrs-Eurorack-Modules
+[submodule "synth-michigansynthworks-Synths"]
+	path = synth-michigansynthworks-Synths
+	url = git@git-rhino:rhinocerose/synth-michigansynthworks-Synths
