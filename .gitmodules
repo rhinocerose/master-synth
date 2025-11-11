@@ -91,3 +91,6 @@
 [submodule "synth-michigansynthworks-Synths"]
 	path = synth-michigansynthworks-Synths
 	url = git@git-rhino:rhinocerose/synth-michigansynthworks-Synths
+[submodule "eurorack-nlc"]
+	path = eurorack-nlc
+	url = git@git-rhino:rhinocerose/eurorack-nlc
