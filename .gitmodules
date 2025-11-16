@@ -94,3 +94,6 @@
 [submodule "eurorack-nlc"]
 	path = eurorack-nlc
 	url = git@git-rhino:rhinocerose/eurorack-nlc
+[submodule "eurorack-misc"]
+	path = eurorack-misc
+	url = git@git-rhino:rhinocerose/eurorack-misc
